@@ -4,28 +4,6 @@ from classes import Population
 import matplotlib.pyplot as plt
 
 
-# Code piece to draw fitness plots
-def drawPlots(totalFitnessList, num_generations, num_inds, num_genes, tm_size,
-              frac_elites, frac_parents, mutation_prob, mutationMethod):
-    generations = [i for i in range(num_generations+1)]
-
-    plt.plot(generations, totalFitnessList)
-    plt.xlabel("Generation")
-    plt.ylabel("Fitness")
-    plt.title("Total Fitness vs All Generations")
-    plt.savefig("Results/Plots/first_"+str(num_inds)+"_"+str(num_genes)+"_"+str(tm_size)+"_"+str(frac_elites)+
-                "_"+str(frac_parents)+"_"+str(mutation_prob)+"_"+mutationMethod+".png")
-    plt.close()
-
-    plt.plot(generations[1000:], totalFitnessList[1000:])
-    plt.xlabel("Generation")
-    plt.ylabel("Fitness")
-    plt.title("Total Fitness vs Generations 1000-10000")
-    plt.savefig("Results/Plots/second_"+str(num_inds)+"_"+str(num_genes)+"_"+str(tm_size)+"_"+str(frac_elites)+
-                "_"+str(frac_parents)+"_"+str(mutation_prob)+"_"+mutationMethod+".png")
-    plt.close()
-
-
 # Hyperparameters
 num_generations = 10000
 num_inds = 20
